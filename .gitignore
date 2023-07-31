@@ -1,0 +1,7 @@
+**node_modules
+**venv
+.idea
+.vscode
+install/asdk/*
+install/*.apk*
+**/.temp

@@ -1,0 +1,25 @@
+{
+  "name": "appium-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "pytest tests"
+  },
+  "keywords": [
+    "appium",
+    "emulator",
+    "testing"
+  ],
+  "author": "Zoltan Fabian",
+  "license": "MIT",
+  "dependencies": {
+    "appium": "^2.0.1"
+  },
+  "devDependencies": {
+    "appium-dashboard": "^2.0.2",
+    "appium-device-farm": "^8.2.1",
+    "appium-espresso-driver": "^2.24.0",
+    "appium-uiautomator2-driver": "^2.29.3"
+  }
+}

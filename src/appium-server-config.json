@@ -1,0 +1,25 @@
+{
+  "server": {
+    "address": "127.0.0.1",
+    "keep-alive-timeout": 800,
+    "base-path": "/wd/hub",
+    "allow-insecure": [
+      "adb_shell",
+      "execute_driver_script"
+    ],
+    "use-plugins": [
+      "appium-dashboard",
+      "device-farm",
+      "execute-driver"
+    ],
+    "plugin": {
+      "device-farm": {
+        "platform": "android",
+        "skipChromeDownload": false,
+        "androidDeviceType": "simulated",
+        "iosDeviceType": "simulated",
+        "maxSessions": 3
+      }
+    }
+  }
+}
