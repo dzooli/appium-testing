@@ -25,8 +25,7 @@ class TestBase(unittest.TestCase):
             return None
         if len(el) == 1:
             return el[0]
-        else:
-            return el
+        return el
 
     @staticmethod
     def wait_for_element_located(driver: WebDriver, element: tuple, timeout: int = 20) -> (WebElement |
@@ -38,5 +37,4 @@ class TestBase(unittest.TestCase):
             return None
         if len(el) == 1:
             return el[0]
-        else:
-            return el
+        return el
