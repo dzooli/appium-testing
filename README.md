@@ -12,15 +12,18 @@ Using an **emulated Android** device for the required tasks.
 
 ## Requirements
 
+This process has been tested on Windows 10, for Linux we need to investigate the possibilities later.
+
 - JDK
+- NodeJs
 - Android cmdline tools
 - Android SDK (partially)
 - Android emulator
-- a running AVD
+- a running Android Virtual Device
 - Appium
 - Appium-Inspector (optional, from [this Github repo](https://github.com/appium/appium-inspector/releases))
 - Test framework
-  - pytest
+  - unittest
   - appium-python-client
 
 ## Setup
@@ -32,14 +35,17 @@ Using an **emulated Android** device for the required tasks.
 ```shell
 # Download JDK
 curl --output jdk-20.exe https://download.oracle.com/java/20/latest/jdk-20_windows-x64_bin.exe
+
 # Install JDK before continue
 # and set JAVA_HOME
 export JAVA_HOME=/d/programs/Java/jdk-20  # example path, use your own
+
 # Install Android SDK
 mkdir -p install/asdk
 cd install/asdk
 curl --output asdk-cmdline.zip https://dl.google.com/android/repository/commandlinetools-win-9477386_latest.zip
 unzip asdk-cmdline.zip
+
 # Move the tools to its standard directory
 mv cmdline-tools latest
 mkdir cmdline-tools
@@ -100,6 +106,8 @@ npx appium plugin install --source=npm appium-dashboard
 
 #### Configure
 
+The configuration below is suitable for well protected servers since some insecure features are enabled.
+
 Create your Appium server configuration file ```appium-server-config.json``` like this:
 
 ```json
@@ -148,7 +156,7 @@ If everything is fine at this point you can access **your Appium and the detecte
 Use a new terminal since the Appium server is running on the last used.
 
 - Create and activate a Python virtualenv
-- Install ```appium-python-client```
+- Install ```appium-python-client``` with pip
 
 ### Write tests
 
@@ -180,7 +188,7 @@ class TestAnAppWithAppium(unittest.TestCase):
         driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", caps)
         driver.execute_script("mobile: shell", {
             "command": "pm",
-            "args": ["grant", self.appPackage, "android.permission.CAMERA"]
+            "args": ["grant", self.appPackage, "android.permission.CAMERA"]  # Example programmatic permission grant
         })
         if driver.is_app_installed(self.appPackage):
             driver.activate_app(self.appPackage)
