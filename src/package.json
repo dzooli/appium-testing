@@ -14,7 +14,7 @@
   "author": "Zoltan Fabian",
   "license": "MIT",
   "dependencies": {
-    "appium": "^2.0.1"
+    "appium": "^2.2.2"
   },
   "devDependencies": {
     "appium-dashboard": "^2.0.2",
