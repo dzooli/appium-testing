@@ -21,7 +21,7 @@ This process has been tested on Windows 10, for Linux we need to investigate the
 - Android emulator
 - a running Android Virtual Device
 - Appium
-- Appium-Inspector (optional, from [this Github repo](https://github.com/appium/appium-inspector/releases))
+- Appium-Inspector (optional, from [this GitHub repo](https://github.com/appium/appium-inspector/releases))
 - Test framework
   - unittest
   - appium-python-client
@@ -238,11 +238,12 @@ cd $ANDROID_SDK_ROOT
 ```
 
 From the test _(needs execute-script plugin for Appium)_:
+
 ```python
 driver.execute_script("mobile: shell", {
-            "command": "pm",
-            "args": ["grant", self.appPackage, "android.permission.CAMERA"]
-        })
+    "command": "pm",
+    "args": ["grant", self.app_package, "android.permission.CAMERA"]
+})
 
 ```
 

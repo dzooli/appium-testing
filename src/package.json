@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "pytest tests"
+    "test": "python -m unittest"
   },
   "keywords": [
     "appium",
@@ -14,6 +14,7 @@
   "author": "Zoltan Fabian",
   "license": "MIT",
   "dependencies": {
+    "@appium/doctor": "^2.0.22",
     "appium": "^2.0.1"
   },
   "devDependencies": {
